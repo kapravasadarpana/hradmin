@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HR Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login" class="login">
+    <form id="loginForm" class="login-card stack">
+      <div class="login-heading"><div class="portal-mark">HR</div><div><p>EMPLOYEE PORTAL</p><h2>Sign in</h2></div></div>
+      <label class="form-label">Username<input id="username" autocomplete="username" required></label>
+      <label class="form-label">Password
+        <span class="login-field"><input id="password" type="password" autocomplete="current-password" required><button type="button" id="passwordToggle" class="password-toggle" aria-label="Show password" aria-pressed="false">Show</button></span>
+      </label>
+      <p id="loginError" class="error"></p>
+      <button class="btn btn-primary login-submit">Sign in</button>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="side">
+      <h2>HR Portal</h2>
+      <button class="nav active" data-page="dashboard">Dashboard</button>
+      <button class="nav" data-page="employees">Employees</button>
+      <button class="nav" data-page="transfers">Transfers</button>
+      <button class="nav" data-page="leaves">Leaves</button>
+      <button class="nav" data-page="joinings">Joinings</button>
+      <button class="nav" data-page="admin">Admin</button>
+      <button class="nav" data-page="password">Password</button>
+    </aside>
+    <main>
+      <header class="top"><h1 id="title">Dashboard</h1><div><span id="currentUser" class="muted"></span> <button id="logout" class="btn btn-light">Log out</button></div></header>
+      <div id="content"></div>
+    </main>
+  </div>
+
+  <dialog id="recordModal">
+    <form id="recordForm">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button type="button" id="closeModal" class="btn btn-light">✕</button></div>
+      <div class="modal-body"><div id="formFields" class="fields"></div><p id="formError" class="error"></p></div>
+      <div class="modal-actions"><button class="btn btn-primary">Save</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
